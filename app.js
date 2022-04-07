@@ -8,12 +8,17 @@ const ItemCtrl = (function () {
         return data;
       }
       // For https://youtu.be/iP3PcDNhJXI
-      if (url.length >= 43 && url.length <= 48) {
+      if (url.length >= 43) {
         let arr = url.split("=");
         let data = arr[1];
         return data;
       }
 
+      // if (url.length >= 60 && url.length <= 74) {
+      //   let arr = url.split("=");
+      //   let data = arr[1];
+      //   return data;
+      // }
       return data;
     },
   };
@@ -53,7 +58,6 @@ const Ui = (function () {
 })();
 // https://www.youtube.com/watch?v=T08HqmaLFU0
 const App = (function (ItemCtrl, Ui) {
-  const konversi = new Konversi();
   const selector = Ui.getSelector();
   function loadEvent() {
     document.querySelector(selector.btn).addEventListener("click", startEvent);
